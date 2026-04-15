@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Mental: Comunicação em ADS</title>
+    <style>
+        :root {
+            --bg-color: #1e1e2e;
+            --text-color: #cdd6f4;
+            --primary-color: #89b4fa;
+            --accent-color: #f38ba8;
+            --node-bg: #313244;
+            --leaf-bg: #181825;
+            --line-color: #585b70;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 40px 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(--line-color);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Estrutura da Árvore */
+        ul.tree {
+            list-style-type: none;
+            padding-left: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        ul.tree ul {
+            list-style-type: none;
+            padding-left: 20px;
+            border-left: 2px dashed var(--line-color);
+            margin-left: 15px;
+        }
+
+        li {
+            margin: 10px 0;
+            position: relative;
+        }
+
+        /* Estilo dos nós interativos */
+        .caret {
+            cursor: pointer;
+            user-select: none;
+            font-weight: bold;
+            background-color: var(--node-bg);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .caret:hover {
+            background-color: #45475a;
+            border: 1px solid var(--primary-color);
+        }
+
+        /* Seta indicadora */
+        .caret::before {
+            content: "\25B6";
+            color: var(--primary-color);
+            display: inline-block;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .caret-down::before {
+            transform: rotate(90deg);
+            color: var(--accent-color);
+        }
+
+        /* Conteúdo oculto (ramos) */
+        .nested {
+            display: none;
+            padding-top: 10px;
+            animation: fadeIn 0.4s;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Estilo do conteúdo final (folhas) */
+        .leaf {
+            background-color: var(--leaf-bg);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+            margin-top: 5px;
+            font-weight: normal;
+            font-size: 0.95em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌐 Mapa Mental: Comunicação em ADS</h1>
+    <p class="subtitle">Clique nos tópicos para expandir a árvore de conhecimento (Desenvolvido por Caio, Wendel, Gabriel e Marcelo)</p>
+
+    <ul class="tree">
+        <li>
+            <span class="caret">A Comunicação Empresarial e seu Impacto na Análise e Desenvolvimento de Sistemas</span>
+            <ul class="nested">
+                
+                <li>
+                    <span class="caret">1. O Conceito Central</span>
+                    <ul class="nested">
+                        <li>
+                            <div class="leaf">
+                                A comunicação é a espinha dorsal de qualquer organização. Em ADS, ela é a <span class="highlight">principal ponte tradutora</span> entre as necessidades de negócios do cliente e as soluções técnicas dos desenvolvedores. Sem ela, um projeto já nasce comprometido.
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="caret">2. Os Quatro Fundamentos da Comunicação</span>
+                    <ul class="nested">
+                        <li>
+                            <span class="caret">Clareza</span>
+                            <ul class="nested"><li><div class="leaf">Garantir compreensão. Dosar o uso de jargões técnicos ("tecniquês") com clientes e áreas não técnicas.</div></li></ul>
+                        </li>
+                        <li>
+                            <span class="caret">Objetividade</span>
+                            <ul class="nested"><li><div class="leaf">Ir direto ao ponto. Respeitar o tempo ágil, evitando reuniões exaustivas fora de escopo.</div></li></ul>
+                        </li>
+                        <li>
+                            <span class="caret">Respeito</span>
+                            <ul class="nested"><li><div class="leaf">Empatia e escuta ativa. Ouvir para entender a dor do usuário, não só para responder rápido.</div></li></ul>
+                        </li>
+                        <li>
+                            <span class="caret">Adequação ao Contexto</span>
+                            <ul class="nested"><li><div class="leaf">Ajustar tom e meio. Um aviso de erro no código para um colega difere de um relatório de atraso para a diretoria.</div></li></ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="caret">3. Tipos de Ruídos de Comunicação</span>
+                    <ul class="nested">
+                        <li><div class="leaf"><span class="highlight">Físico:</span> Interferências do ambiente (barulho, conversas paralelas, layout ruim).</div></li>
+                        <li><div class="leaf"><span class="highlight">Semântico:</span> Não falar a mesma "língua" (Ex: Cliente achar que "subir pra homologação" significa que o app está pronto pro público).</div></li>
+                        <li><div class="leaf"><span class="highlight">Psicológico:</span> Preconceitos, desmotivação ou resistência a novas tecnologias.</div></li>
+                        <li><div class="leaf"><span class="highlight">Fisiológico:</span> Exaustão, burnout, noites em claro que prejudicam a interpretação de regras de negócio.</div></li>
+                        <li><div class="leaf"><span class="highlight">Organizacional:</span> Falta de fluxos. Burocracia excessiva ou mensagens perdidas na hierarquia.</div></li>
+                        <li><div class="leaf"><span class="highlight">Tecnológico:</span> Internet caindo, microfone ruim ou excesso de plataformas descentralizando informações.</div></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="caret">4. Impactos Diretos na Rotina de ADS</span>
+                    <ul class="nested">
+                        <li>
+                            <div class="leaf">
+                                Ruídos custam <strong>tempo e dinheiro</strong>. Erros no levantamento geram documentação errada. Falha entre Front-end e Back-end impede integração do código. O impacto final é entregar um produto que o cliente não pediu, gerando quebra de confiança e muito retrabalho.
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="caret">5. Estudo de Caso: O "Relatório Rápido"</span>
+                    <ul class="nested">
+                        <li><div class="leaf"><span class="highlight">O Problema:</span> Cliente pediu via WhatsApp um "relatório rápido". O líder apenas repassou sem questionar.</div></li>
+                        <li><div class="leaf"><span class="highlight">Os Ruídos:</span> Organizacional (uso do WhatsApp sem registro oficial) e Semântico (a palavra "rápido").</div></li>
+                        <li><div class="leaf"><span class="highlight">O Impacto:</span> O cliente queria um simples Excel. A equipe gastou 2 semanas programando um dashboard interativo. O cronograma atrasou e todos ficaram frustrados.</div></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="caret">6. Propostas de Solução</span>
+                    <ul class="nested">
+                        <li><div class="leaf"><span class="highlight">Padronização e Registro:</span> Eliminar pedidos informais. Usar Jira, Trello, Azure. Chat é só para dúvidas triviais.</div></li>
+                        <li><div class="leaf"><span class="highlight">Validação de Entendimento:</span> Sempre repetir: "Pelo que conversamos, sua necessidade é X. Meu entendimento está correto?".</div></li>
+                        <li><div class="leaf"><span class="highlight">Clareza nos Requisitos:</span> Tarefas com descrições detalhadas e "Critérios de Aceite" bem definidos antes de codar.</div></li>
+                        <li><div class="leaf"><span class="highlight">Organização de Reuniões:</span> Ter pauta prévia, limite de tempo e criar um ambiente seguro para feedbacks.</div></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // Adiciona a funcionalidade de clique para expandir/recolher a árvore
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function() {
+                // Encontra o próximo elemento 'ul' (que é a ramificação aninhada)
+                var nestedElement = this.parentElement.querySelector(".nested");
+                
+                if (nestedElement) {
+                    nestedElement.classList.toggle("active");
+                    this.classList.toggle("caret-down");
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
